@@ -1,6 +1,4 @@
-## angular2-seed
-
-A simple starter project demonstrating the basic concepts of Angular 2.
+## angular2 web workers application test
 
 
 ### Usage
