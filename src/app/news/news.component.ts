@@ -15,7 +15,7 @@ export class NewsComponent implements OnInit {
 
 	public news: any;
 
-	constructor(private zone: NgZone, private firebase: FirebaseService) {}
+	constructor(private zone: NgZone, public firebase: FirebaseService) {}
 
 	public ngOnInit() {
 		firebase.auth().onAuthStateChanged(user => {

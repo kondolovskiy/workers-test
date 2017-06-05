@@ -6,7 +6,8 @@
     "build": "webpack --progress",
     "watch": "npm run build -- --watch",
     "server": "webpack-dev-server --inline --progress --port 3000 --content-base src",
-    "start": "npm run server"
+    "start": "npm run server",
+    "test": "node_modules/.bin/karma start --auto-watch --no-single-run --reporters progress"
   },
   "contributors": [
     "Rob Wormald <robwormald@gmail.com>",
@@ -41,14 +42,21 @@
     "angular2-template-loader": "^0.6.0",
     "awesome-typescript-loader": "^2.2.4",
     "css-loader": "^0.25.0",
+    "jasmine": "^2.6.0",
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.1.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^2.0.3",
     "node-sass": "^4.5.3",
     "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.5",
+    "source-map-loader": "^0.2.1",
     "to-string-loader": "^1.1.4",
     "typescript": "~2.0.10",
-    "webpack": "2.1.0-beta.27",
-    "webpack-dev-server": "2.1.0-beta.11",
-    "webpack-merge": "^0.15.0"
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1",
+    "webpack-merge": "^2.6.1"
   },
   "keywords": [
     "Angular2",
