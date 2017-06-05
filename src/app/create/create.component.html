@@ -1,0 +1,17 @@
+<h2>Contact Reactive Form</h2>
+
+<form (ngSubmit)="submitForm()" [formGroup]="createForm" novalidate>
+  <div class="form-content">
+    <label>
+      Name:
+      <input type="text" formControlName="title" class="sd-form-control" placeholder="Enter news title.">
+    </label>
+    <label>
+      Content:
+      <textarea formControlName="content" class="sd-form-control" placeholder="Content here."></textarea>
+    </label>
+    <div class="form-submit">
+      <button type="submit">Submit</button>
+    </div>
+  </div>
+</form>
