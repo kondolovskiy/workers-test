@@ -112,7 +112,9 @@ self.addEventListener('fetch', function(event) {
           console.log('  Response for %s from network is: %O',
             event.request.url, response);
 
-          if (response.status < 400 && event.request.method !== 'POST') {
+          let url = new URL(event.request.url);
+
+          if (response.status < 400 && event.request.method !== 'POST' && url.protocol !== 'chrome-extension:') {
             cache.put(event.request, response.clone());
           } else if (response.status >= 500) {
             checkForFirebaseRequest(event.request);
