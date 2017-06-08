@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FirebaseService } from './../news/services/firebase.service';
 
@@ -11,7 +11,7 @@ import { FirebaseService } from './../news/services/firebase.service';
 		FirebaseService
 	]
 })
-export class CreateComponent implements OnInit {
+export class CreateComponent implements OnInit, OnDestroy {
 
   public createForm: FormGroup;
 
@@ -23,6 +23,16 @@ export class CreateComponent implements OnInit {
       content: ['', [Validators.required, Validators.minLength(10)]]
     });
 
+    window.addEventListener('online', this.reload);
+
+  }
+
+  public ngOnDestroy() {
+    window.removeEventListener('online', this.reload);
+  }
+
+  private reload() {
+    location.reload()
   }
 
   public submitForm(): void {
